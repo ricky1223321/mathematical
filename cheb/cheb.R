@@ -1,9 +1,13 @@
-chebyshev = function(k){
+chebyshev = function(xs,k){
   library(ggplot2)
   library(magrittr)
   library(cowplot)
   set.seed(123)
-  xs <- c(rnorm(2000))
+  #xs <- c(rnorm(2000))
+  #xs <- c(runif(2000,0,1))
+  k=1.2
+  #xs = c(rexp(2000,rate=0.5))
+  xs = c(rbinom(2000,10,0.5))
   lower.bound = mean(xs) - k*sd(xs)
   upper.bound = mean(xs) + k*sd(xs)
   num.in.bounds = length(xs[(xs > lower.bound) & (xs < upper.bound)])
@@ -23,5 +27,4 @@ chebyshev = function(k){
       plot.caption = element_text(size = 14, face = "italic",hjust = 0.5)
     )
 }
-chebyshev(1)
 
