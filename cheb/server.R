@@ -1,5 +1,5 @@
 library(shiny)
-source("D:\\數統\\git\\mathematical\\cheb\\cheb.R")
+source("cheb.R")
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
   #normal
